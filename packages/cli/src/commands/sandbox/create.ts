@@ -98,11 +98,7 @@ export async function connectSandbox({
   sandbox: e2b.Sandbox
   template: Pick<e2b.components['schemas']['Template'], 'templateID'>
 }) {
-  // keep-alive loop
-  const intervalId = setInterval(async () => {
-    await sandbox.setTimeout(30_000)
-  }, 5_000)
-
+  // REMOVED: Timeout interval to disable time limits
   console.log(
     `Terminal connecting to template ${asFormattedSandboxTemplate(
       template
@@ -111,7 +107,6 @@ export async function connectSandbox({
   try {
     await spawnConnectedTerminal(sandbox)
   } finally {
-    clearInterval(intervalId)
     await sandbox.kill()
     console.log(
       `Closing terminal connection to template ${asFormattedSandboxTemplate(
