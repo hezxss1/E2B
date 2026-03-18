@@ -1,17 +1,17 @@
-# This is a config for E2B sandbox template.
-# You can use template ID (rki5dems9wqfm4r03t7g) or template name (base) to create a sandbox:
+# This is a config for E2B sandbox template using Kali Linux.
+# You can use template ID (rki5dems9wqfm4r03t7g) or template name (kali-base) to create a sandbox:
 
 # Python SDK
 # from e2b import Sandbox, AsyncSandbox
-# sandbox = Sandbox("base") # Sync sandbox
-# sandbox = await AsyncSandbox.create("base") # Async sandbox
+# sandbox = Sandbox("kali-base") # Sync sandbox
+# sandbox = await AsyncSandbox.create("kali-base") # Async sandbox
 
 # JS SDK
 # import { Sandbox } from 'e2b'
-# const sandbox = await Sandbox.create('base')
+# const sandbox = await Sandbox.create('kali-base')
 
 team_id = "460355b3-4f64-48f9-9a16-4442817f79f5"
-memory_mb = 512
+memory_mb = 2048  # Increased memory for Kali Linux tools
 dockerfile = "e2b.Dockerfile"
-template_name = "base"
+template_name = "kali-base"
 template_id = "rki5dems9wqfm4r03t7g"
